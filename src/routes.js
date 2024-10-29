@@ -31,6 +31,9 @@ export const routes = [
     path: "/recipe/:id",
     name: "detailPage",
     component: DetailPage,
+    beforeEnter: (to, from, next) => {
+      checkAuth() ? next() : next({ name: "login" })
+    }
   },
   {
     path: "/user/:component",

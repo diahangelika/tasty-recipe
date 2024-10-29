@@ -4,7 +4,7 @@
       <div
       class="col-12 col-lg-3 col-sm-4 position-relative"
       style="padding-top: 12px; padding-bottom: 12px"
-      v-for="(resep, index) in recipes" :key="index"
+      v-for="resep in recipes" :key="resep.id"
       >
         <router-link :to="`/recipe/${resep.id}`" class="card text-decoration-none" style="height: 398px">
           <img
@@ -34,7 +34,19 @@
 </template>
 
 <script setup>
-  defineProps({
-    recipes : Array
+  // defineProps({
+  //   recipes : Array
+  // })
+
+  // COBA COBA
+
+  import recipe from '@/recipe';
+  import { computed, reactive } from 'vue';
+  import { useStore } from 'vuex';
+
+  const store = useStore()
+
+  const recipes = computed(() => {
+    return store.state.recipe.recipes
   })
 </script>

@@ -14,15 +14,6 @@
   </div>
 </template>
 
-<script>
-  import RecipeList from '../recipe/RecipeList.vue';
-  export default {
-    components: {
-      RecipeList
-    }
-  }
-</script>
-
 <script setup>
   import RecipeList from '../recipe/RecipeList.vue';
   import { onMounted, ref } from 'vue';

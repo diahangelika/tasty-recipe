@@ -25,7 +25,7 @@ const store = useStore();
 const components = {
   "signup-menu": SignupMenu,
   "profile-menu": ProfileMenu,
-};
+}; 
 
 const getToken = computed(() => {
   return store.state.auth.token;
